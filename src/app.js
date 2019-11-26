@@ -4,10 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el: "#app",
     data: {
-      selectedCurrency:"hi",
+      euro:"",
+      selectedCurrency:"",
       rates:[]
     },
     computed:{
+      convertedResult:function(){
+
+        return this.selectedCurrency
+
+      }
 
     },
     mounted(){
@@ -23,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // .then(rates => rates.CAD)
         // .then(result => this.rates = result)
       }
+
+
 
         // .then(countries => this.countries = countries)
 

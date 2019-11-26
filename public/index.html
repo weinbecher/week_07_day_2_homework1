@@ -7,16 +7,22 @@
   </head>
   <body>
     <div id="app">
-      <label for="Select Currency"></label>
+      <h1>Euro Converter</h1>
+      <label for="Euro"> Euro </label>
+      <input type="number" v-model.number="euro"/>
 
-      <!-- <select id="select-currency" v-model="selectedCurrency">
-        <option v for="currency in curries" :value = "currency"> currency</option> -->
+      <label for="Select Currency"> Select a currency to convert</label>
+      <select id="select-currency" v-model="selectedCurrency">
+        <option disabled value="">Select a currency</option>
+        <option v-for="(value, name) in rates">
+          {{ name }}: {{ value }}
+        </option>
 
       </select>
 
-      <p>{{rates}}</p>
+      <!-- <p>{{rates}}</p> -->
 
-      <button v-on:click="getRates" name="button">Test</button>
+      <p>Result: {{ convertedResult }} </p>
 
     </div>
 
