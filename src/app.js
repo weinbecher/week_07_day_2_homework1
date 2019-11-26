@@ -11,8 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     computed:{
       convertedResult:function(){
 
-        return this.selectedCurrency
-
+      const exrate = this.selectedCurrency.slice(5)
+      const xrate = Number(exrate);
+      const result = this.euro * xrate;
+      return result;
       }
 
     },
